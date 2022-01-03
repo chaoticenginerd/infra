@@ -1,0 +1,43 @@
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Removing unnecessary packages
+      dnf:
+        name:
+          - akregator
+          - dnfdragora
+          - dragon
+          - kaddressbook
+          - kamoso
+          - kcalc
+          - kcharselect
+          - kde-connect
+          - kde-partitionmanager
+          - kfind
+          - kgpg
+          - kmag
+          - kmahjongg
+          - kmail
+          - kmines
+          - kmousetool
+          - kmouth
+          - kolourpaint
+          - kontact
+          - konversation
+          - korganizer
+          - kpat
+          - krdc
+          - krfb
+          - kwrite
+          - plasma-discover
+        state: absent
+        autoremove: yes
+      tags: ['setup']
+
+    - name: Installing apps
+      dnf:
+        name:
+          - kate
+          - thunderbird
+          - qbittorrent
+      tags: ['setup']
