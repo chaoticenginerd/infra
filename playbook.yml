@@ -1,5 +1,12 @@
 - hosts: localhost
   become: true
+  pre_tasks:
+    - name: Updating repositories
+      dnf:
+        name: "*"
+        state: latest
+      tags: ['dev']
+
   tasks:
     - name: Removing unnecessary packages
       dnf:
@@ -34,6 +41,13 @@
         autoremove: yes
       tags: ['setup']
 
+    - name: Installing fonts
+      dnf:
+        name:
+          - ibm-plex-fonts-all
+        state: latest
+      tags: ['dev']
+
     - name: Installing apps
       dnf:
         name:
@@ -41,3 +55,19 @@
           - thunderbird
           - qbittorrent
       tags: ['setup']
+
+    - name: Installing development tools
+      dnf:
+        name:
+          - fzf
+          - git
+          - neovim
+          - pipenv
+          - ripgrep
+          - starship
+          - stow
+          - tmux
+          - trash-cli
+          - zola
+        state: latest
+      tags: ['dev']
