@@ -1,0 +1,33 @@
+add_newline = false
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$python\
+$character"""
+
+[directory]
+read_only = " [RO]"
+truncation_length = 1
+
+[git_branch]
+format = "\\([$branch(:$remote_branch)]($style)\\) "
+style = "purple"
+
+[git_status]
+format = "(\\[[$all_status$ahead_behind]($style)\\] )"
+ahead = ">"
+behind = "<"
+deleted = "x"
+diverged = "<>"
+renamed = "r"
+style = "red"
+
+[python]
+format = "(\\($virtualenv\\) )"
+
+[character]
+error_symbol = "[\\$](red)"
+success_symbol = "[\\$]()"
