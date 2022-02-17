@@ -1,0 +1,16 @@
+[user]
+	email = git@chaoticenginerd.com
+	name = Tosh
+	signingkey = git@chaoticenginerd.com
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
+[alias]
+	a = add
+	c = commit
+	s = status
+	p = push
+	df = diff
+	sdf = diff --staged
+	l = log --oneline --graph
