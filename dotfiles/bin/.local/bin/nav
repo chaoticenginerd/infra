@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# nav--Start (or attach to) a tmux session in a directory selected via fzf.
+# Used for quickly navigating between specified directories.
+
+target=$(find ~ ~/Documents ~/Playground -mindepth 1 -maxdepth 1 -type d | fzf)
+
+if [ -z "$target" ] ; then
+    exit 0
+fi
+
+target_name=$(basename $target | tr . _)
+
+if ! tmux has-session -t $target_name 2>/dev/null; then
+    tmux new-session -s $target_name -c $target -d
+fi
+
+tmux attach -t $target_name
+exit 0
