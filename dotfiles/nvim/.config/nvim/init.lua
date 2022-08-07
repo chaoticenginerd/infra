@@ -45,3 +45,8 @@ vim.keymap.set("n", "<leader>h", "<cmd>wincmd h<cr>")
 vim.keymap.set("n", "<leader>j", "<cmd>wincmd j<cr>")
 vim.keymap.set("n", "<leader>k", "<cmd>wincmd k<cr>")
 vim.keymap.set("n", "<leader>l", "<cmd>wincmd l<cr>")
+
+-- Plugins
+require('packer').startup(function(use)
+    use { "wbthomason/packer.nvim" }
+end)
