@@ -33,6 +33,11 @@ vim.g.mapleader = " "
 -- Plugins
 require("packer").startup(function(use)
     use { "wbthomason/packer.nvim" }
+    use {
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.0",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
 end)
 
 -- Keymaps
@@ -50,3 +55,10 @@ vim.keymap.set("n", "<leader>h", "<cmd>wincmd h<cr>")
 vim.keymap.set("n", "<leader>j", "<cmd>wincmd j<cr>")
 vim.keymap.set("n", "<leader>k", "<cmd>wincmd k<cr>")
 vim.keymap.set("n", "<leader>l", "<cmd>wincmd l<cr>")
+
+    -- Telescope
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+vim.keymap.set("n", "<leader>fs", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
