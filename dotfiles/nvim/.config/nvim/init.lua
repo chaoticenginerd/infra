@@ -38,7 +38,23 @@ require("packer").startup(function(use)
         tag = "0.1.0",
         requires = { {"nvim-lua/plenary.nvim"} }
     }
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate"
+    }
 end)
+
+    -- Treesitter
+require("nvim-treesitter.configs").setup {
+  ensure_installed = { "c", "help", "lua", "python", "rust" },
+  sync_install = false,
+  auto_install = true,
+
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
 
 -- Keymaps
     -- General
