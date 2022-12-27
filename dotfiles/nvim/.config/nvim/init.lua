@@ -1,5 +1,5 @@
 -- Settings
-    -- Editor UI
+   -- Editor UI
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "88"
@@ -8,7 +8,7 @@ vim.opt.scrolloff = 8
 vim.opt.mouse = ""
 vim.opt.termguicolors = true
 
-    -- Editing
+   -- Editing
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -22,12 +22,12 @@ vim.opt.list = true
 vim.opt.listchars:append { trail = "*" }
 vim.opt.completeopt = { "menuone", "noinsert" }
 
-    -- Netrw
+   -- Netrw
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 vim.g.netrw_liststyle = 3
 
-    -- Leader
+   -- Leader
 vim.g.mapleader = " "
 
 -- Plugins
@@ -45,35 +45,35 @@ require("packer").startup(function(use)
     use {"nyoom-engineering/oxocarbon.nvim"}
 end)
 
-    -- Treesitter
+   -- Treesitter
 require("nvim-treesitter.configs").setup {
-  ensure_installed = { "c", "help", "lua", "python", "rust" },
-  sync_install = false,
-  auto_install = true,
+    ensure_installed = { "c", "help", "lua", "python", "rust" },
+    sync_install = false,
+    auto_install = true,
 
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+    },
 }
 
 -- Keymaps
-    -- General
+   -- General
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
 vim.keymap.set("n", "<leader>e", "<cmd>q<cr>")
 vim.keymap.set("n", "<leader><cr>", "<cmd>source %<cr>")
 
-    -- Splits
+   -- Splits
 vim.keymap.set("n", "<leader>v", "<cmd>wincmd v<cr>")
 vim.keymap.set("n", "<leader>s", "<cmd>wincmd s<cr>")
 
-    -- Splits navigation
+   -- Splits navigation
 vim.keymap.set("n", "<leader>h", "<cmd>wincmd h<cr>")
 vim.keymap.set("n", "<leader>j", "<cmd>wincmd j<cr>")
 vim.keymap.set("n", "<leader>k", "<cmd>wincmd k<cr>")
 vim.keymap.set("n", "<leader>l", "<cmd>wincmd l<cr>")
 
-    -- Telescope
+   -- Telescope
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
