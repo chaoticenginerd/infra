@@ -48,6 +48,10 @@ require("packer").startup(function(use)
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
     }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 end)
 
    -- Treesitter
