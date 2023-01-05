@@ -114,7 +114,7 @@ end
 -- Keymaps
    -- General
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
-vim.keymap.set("n", "<leader>e", "<cmd>q<cr>")
+vim.keymap.set("n", "<leader>b", "<cmd>q<cr>")
 vim.keymap.set("n", "<leader><cr>", "<cmd>source %<cr>")
 
    -- Splits
